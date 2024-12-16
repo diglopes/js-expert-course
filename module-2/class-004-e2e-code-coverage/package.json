@@ -1,0 +1,23 @@
+{
+  "name": "class-001-mocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha src/**/*.test.js -w",
+    "test:cov": "npx nyc npx mocha src/**/*.test.js",
+    "start": "nodemon src/index.js"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "keywords": [],
+  "author": "Diego Lopes",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "2.0.22",
+    "supertest": "6.3.3",
+    "mocha": "10.2.0",
+    "nyc": "15.1.0"
+  }
+}
