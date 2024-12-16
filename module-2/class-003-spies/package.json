@@ -1,0 +1,19 @@
+{
+  "name": "class-001-mocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon src/fibonacci.test.js"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "keywords": [],
+  "author": "Diego Lopes",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "2.0.22",
+    "sinon": "15.0.1"
+  }
+}
