@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+  node-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - node_modules:/app/node_modules
+      - .:/app
+    ports:
+      - "3000:3000"
+    command: ["npm", "run", "seed"]
+volumes:
+  node_modules:

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "373a944b-4480-411c-8604-642f5661ae26",
+    "name": "Fortwo",
+    "releaseYear": 2024,
+    "avaiable": true,
+    "gasAvaible": true
+  },
+  {
+    "id": "87907967-eb20-44d9-bbef-38d57610b989",
+    "name": "Grand Cherokee",
+    "releaseYear": 2024,
+    "avaiable": true,
+    "gasAvaible": true
+  }
+]

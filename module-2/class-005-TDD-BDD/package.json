@@ -1,0 +1,22 @@
+{
+  "name": "class-001-mocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "seed": "node database/seed/index.js"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "keywords": [],
+  "author": "Diego Lopes",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "2.0.22",
+    "supertest": "6.3.3",
+    "mocha": "10.2.0",
+    "nyc": "15.1.0",
+    "@faker-js/faker": "8.4.1"
+  }
+}
