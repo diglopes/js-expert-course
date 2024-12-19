@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "seed": "node database/seed/index.js"
+    "seed": "node database/seed/index.js",
+    "test": "mocha **/*.spec.js -w --parallel",
+    "test:cov": "npx nyc npx mocha **/*.spec.js -w --parallel"
   },
   "engines": {
     "node": "18"
@@ -17,6 +19,8 @@
     "supertest": "6.3.3",
     "mocha": "10.2.0",
     "nyc": "15.1.0",
+    "sinon": "15.0.1",
+    "chai": "4.3.4",
     "@faker-js/faker": "8.4.1"
   }
 }

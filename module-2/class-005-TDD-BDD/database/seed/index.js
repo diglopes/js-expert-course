@@ -5,7 +5,7 @@ const CarCategoryEntity = require("../../src/entities/carCategory");
 const { join } = require("path");
 const { faker } = require('@faker-js/faker');
 
-const MAX_ITEMS = 2
+const MAX_ITEMS = 3
 const seederBaseFolder = join(__dirname, "..")
 
 const carCategory = new CarCategoryEntity({
@@ -25,6 +25,8 @@ for (let i = 0; i < MAX_ITEMS; i++) {
         gasAvaible: true,
         releaseYear: faker.date.past().getFullYear(),
     }))
+
+    carCategory.carIds.push(cars[i].id)
 
     customers.push(new CustomerEntity({
         id: faker.string.uuid(),

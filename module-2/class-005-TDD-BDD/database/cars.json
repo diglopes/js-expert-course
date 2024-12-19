@@ -1,14 +1,21 @@
 [
   {
-    "id": "373a944b-4480-411c-8604-642f5661ae26",
-    "name": "Fortwo",
+    "id": "c71c8739-84e8-4f9d-a2a6-88f5f7033970",
+    "name": "Focus",
     "releaseYear": 2024,
     "avaiable": true,
     "gasAvaible": true
   },
   {
-    "id": "87907967-eb20-44d9-bbef-38d57610b989",
-    "name": "Grand Cherokee",
+    "id": "02736cb8-aca8-4b82-8602-97c5dcc36f35",
+    "name": "Escalade",
+    "releaseYear": 2024,
+    "avaiable": true,
+    "gasAvaible": true
+  },
+  {
+    "id": "88ccf49c-009e-447c-a4ac-f93c689b9f5b",
+    "name": "CTS",
     "releaseYear": 2024,
     "avaiable": true,
     "gasAvaible": true
