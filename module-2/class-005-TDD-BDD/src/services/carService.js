@@ -1,5 +1,7 @@
 const { join } = require("path");
 const { BaseRepository } = require("../repositories/base");
+const { Tax } = require("../entities/tax");
+const { Transaction } = require("../entities/transaction");
 
 class CarService {
     constructor(){
@@ -23,6 +25,35 @@ class CarService {
     async getAvaiableCar(carCategory){
         const carId = this.chooseRandomcar(carCategory);
         return this.carRepo.find(carId);
+    }
+
+    calculateFinalPrice(customer, carCategory, numberOfDays){
+        const { tax } = Tax.ageBasedTaxes.find(
+            tax => customer.age >= tax.from && customer.age <= tax.to 
+        );
+        const finalPrice = (carCategory.price * tax) * numberOfDays;
+        return new Intl.NumberFormat('pt-br', { 
+            style: 'currency', currency: 'BRL' 
+        }).format(finalPrice)
+    }
+
+    async rent(customer, carCategory, numberOfDays){
+        const car = await this.getAvaiableCar(carCategory);
+        const amount = this.calculateFinalPrice(customer, carCategory, numberOfDays);
+        const today = new Date();
+        today.setDate(today.getDate() + numberOfDays);
+        const dueDate = today.toLocaleDateString("pt-br", {
+            year: "numeric",
+            month: "long",
+            day: "2-digit"}
+        );
+
+        return new Transaction({
+            customer,
+            car,
+            amount,
+            dueDate
+        });
     }
 }
 

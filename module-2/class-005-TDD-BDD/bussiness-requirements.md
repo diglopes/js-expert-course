@@ -31,4 +31,4 @@ And given an actual date 05/11/2020<br>
 When I rent a car I should see the customer data<br>
 And the car selected<br>
 And the final price which will be R$244,40<br>
-And DueDate which will be printed in brazillian portuguse format like "17 de Dezembro de 2024"
+And DueDate which will be printed in brazillian portuguse format like "10 de Novembro de 2020"

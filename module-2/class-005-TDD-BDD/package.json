@@ -6,7 +6,7 @@
   "scripts": {
     "seed": "node database/seed/index.js",
     "test": "mocha **/*.spec.js -w --parallel",
-    "test:cov": "npx nyc npx mocha **/*.spec.js -w --parallel"
+    "test:cov": "npx nyc npx mocha **/*.spec.js --parallel"
   },
   "engines": {
     "node": "18"

@@ -11,6 +11,6 @@ services:
     tty: true
     ports:
       - "3000:3000"
-    command: ["npm", "run", "test"]
+    command: ["npm", "run", "test:cov"]
 volumes:
   node_modules:
