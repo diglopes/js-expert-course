@@ -18,7 +18,7 @@ deepStrictEqual(secondCounter, 1)
 /**
  * The value of counter prop should be equal because
  * arrays and objects (elements that grows along the time)
- * are passed as memory reference.
+ * are passed by reference.
  */
 deepStrictEqual(objCounter.counter, 1)
 deepStrictEqual(secondObjCounter.counter, 1)
