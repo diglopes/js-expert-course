@@ -1,0 +1,19 @@
+{
+  "name": "class-04-value-types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "npx nodemon --ignore db.json --exec node --experimental-json-modules src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "draftlog": "1.0.12",
+    "chalk": "4.1.0",
+    "chalk-table": "1.0.2",
+    "nodemon": "3.1.9"
+  }
+}
