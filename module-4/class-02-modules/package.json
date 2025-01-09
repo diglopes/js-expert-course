@@ -5,9 +5,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "npx nodemon --ignore db.json --exec node --experimental-json-modules src/index.js"
+    "start": "node --experimental-json-modules src/index.js",
+    "dev": "npx nodemon --ignore db.json --exec node --experimental-json-modules --experimental-top-level-await src/index.js"
   },
   "keywords": [],
+  "engines": {
+    "node": "14.3"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
