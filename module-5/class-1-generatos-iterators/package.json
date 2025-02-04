@@ -1,0 +1,31 @@
+{
+  "name": "class-1-generatos-iterators",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-json-modules src/index.js",
+    "dev": "npx nodemon --ignore db.json --exec node --experimental-json-modules --experimental-top-level-await src/index.js",
+    "test": "mocha test/*.spec.js -w --parallel",
+    "test:cov": "npx c8 npx mocha --parallel test/*.spec.js"
+  },
+  "keywords": [],
+  "engines": {
+    "node": "14.3"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "chalk-table": "^1.0.2",
+    "draftlog": "^1.0.12"
+  },
+  "devDependencies": {
+    "nodemon": "3.1.9",
+    "mocha": "^8.2.1",
+    "sinon": "^9.2.1",
+    "chai": "^4.2.0",
+    "c8": "7.14.0"
+  }
+}
