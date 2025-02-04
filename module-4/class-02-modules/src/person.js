@@ -48,7 +48,7 @@ export default class Person {
         })
 
         return {
-            id: this.id,
+            id: Number(this.id),
             vehicles: new Intl.ListFormat(lang, {
                 style: 'long',
                 type: 'conjunction'
@@ -64,6 +64,25 @@ export default class Person {
 
     mapDate(dateString) {
         const [year, month, day] = dateString.split('-')
-        return new Date(year, month, day)
+        return new Date(year, month - 1, day)
+    }
+
+    /**
+     * 
+     * @param {string} text 
+     * @returns {Person}
+     */
+    static generatePersonFromText(text) {
+        const SEPARATOR = ' '
+        const [id, vehicles, kmTraveled, from, to] = text.split(SEPARATOR)
+        const person = new Person({
+            id,
+            kmTraveled,
+            from,
+            to,
+            vehicles: vehicles.split(',')
+        })
+
+        return person
     }
 }

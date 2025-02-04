@@ -13,5 +13,7 @@ services:
     ports:
       - "3000:3000"
     command: ["npm", "run", "dev"]
+    # command: ["npm", "t"]
+    # command: ["npm", "run", "test:cov"]
 volumes:
   node_modules:

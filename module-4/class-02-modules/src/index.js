@@ -1,5 +1,6 @@
-
 import db from './db.json'
+import Person from './person.js'
+import { save } from './repository.js'
 import { TerminalController } from './terminalController.js'
 
 const DEFAULT_LANG = 'pt-br'
@@ -16,7 +17,9 @@ async function mainLoop() {
             terminalController.closeTerminal()
             return
         }
-        console.log(TerminalController.generatePersonFromText(answer).format())
+        const person = Person.generatePersonFromText(answer)
+        terminalController.updateTable(person.format(DEFAULT_LANG))
+        await save(person)
         return mainLoop()
     } catch (error) {
         console.error("Deu ruim, mané!", error)

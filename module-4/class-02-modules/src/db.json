@@ -1,9 +1,1 @@
-[
-    {
-        "id": 1,
-        "vehicles": ["Carro", "Moto", "Caminhão"],
-        "kmTraveled": 8900,
-        "from": "2024-05-10",
-        "to": "2024-11-23"
-    }
-]
+[{"id":1,"vehicles":["Carro","Moto","Caminhão"],"kmTraveled":8900,"from":"2024-05-10","to":"2024-11-23"},{"id":"2","vehicles":["POP"],"kmTraveled":"2000","from":"2020-01-01","to":"2020-02-01"}]

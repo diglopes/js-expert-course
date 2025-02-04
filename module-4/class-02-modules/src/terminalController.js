@@ -16,7 +16,7 @@ export class TerminalController {
     print
 
     /**
-     * @type {array}
+     * @type {Array<Person>}
      */
     data
 
@@ -61,21 +61,11 @@ export class TerminalController {
 
     /**
      * 
-     * @param {string} text 
-     * @returns {Person}
+     * @param {object} item 
      */
-    static generatePersonFromText(text) {
-        const SEPARATOR = ' '
-        const [id, vehicles, kmTraveled, from, to] = text.split(SEPARATOR)
-        const person = new Person({
-            id,
-            kmTraveled,
-            from,
-            to,
-            vehicles: vehicles.split(',')
-        })
-
-        return person
+    updateTable(item) {
+        this.data.push(item)
+        this.print(chalkTable(this.generateTableOpts(), this.data))
     }
 
     generateTableOpts() {
