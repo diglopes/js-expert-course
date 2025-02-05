@@ -1,6 +1,6 @@
 import { expect } from "chai";
 import mocha from "mocha";
-import { csvReader, exampleGenerator, promisified } from "../src/generators-iterators.js";
+import { csvReader, exampleGenerator, getUsers, promisified } from "../src/generators-iterators.js";
 const { describe, it } = mocha
 
 describe("Generators & Iterators", () => {
@@ -31,5 +31,14 @@ describe("Generators & Iterators", () => {
         for await (let line of csvReader(pathname)) {
             expect(line).to.have.all.keys(['name', 'age'])
         }
+    })
+
+    it("should return the database records one by one", async () => {
+        let counter = 0
+        for await (let user of getUsers(2)) {
+            counter += user.length
+            user.forEach(u => expect(u).to.have.keys(['id', 'name', 'age', 'createdAt', 'updatedAt']))
+        }
+        expect(counter).to.eq(10)
     })
 })

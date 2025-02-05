@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node --experimental-json-modules src/index.js",
+    "start": "node --experimental-json-modules src/generators-iterators.js",
     "dev": "npx nodemon --ignore db.json --exec node --experimental-json-modules --experimental-top-level-await src/index.js",
     "test": "mocha test/*.spec.js -w --parallel",
     "test:cov": "npx c8 npx mocha --parallel test/*.spec.js"
@@ -17,9 +17,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chalk": "^4.1.0",
-    "chalk-table": "^1.0.2",
-    "draftlog": "^1.0.12"
+    "sequelize": "6.37.5",
+    "sqlite3": "5.1.7"
   },
   "devDependencies": {
     "nodemon": "3.1.9",

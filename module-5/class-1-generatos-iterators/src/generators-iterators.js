@@ -1,5 +1,15 @@
 import fs from 'fs'
 import readline from 'readline'
+import { sequelize } from './db/database.js'
+
+// User.create({
+//     name: 'Dony',
+//     age: 25
+// })
+
+// sequelize.sync({ force: true })
+// sequelize.sync({ alter: true })
+
 
 /**
  * 
@@ -65,5 +75,28 @@ export async function* csvReader(file) {
             }, {})
         }
              
+    }
+}
+
+
+/**
+ * 
+ * @param {number} chunk 
+ * @returns {Generator<Array>}
+ */
+export async function* getUsers(chunk = 1) {
+    let offset = 0
+    
+    while(true) {
+        const [user] = await sequelize.query(`
+            SELECT * FROM USERS LIMIT ${chunk} OFFSET ${offset}
+        `)
+
+        if(user.length) {
+            yield user
+            offset += chunk
+        } else {
+            break
+        }
     }
 }
